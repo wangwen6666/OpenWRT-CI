@@ -1,0 +1,38 @@
+# ============================================================
+# PRIVATE.txt —— 你的私人插件清单
+# 用法：把本文件放到你 Fork 的 Config/ 目录下，命名为 PRIVATE.txt（必须大写）
+#       Settings.sh 会自动把它并入【每一个】固件，且不与原作者文件冲突。
+# 格式：CONFIG_PACKAGE_<包名>=y   （依赖会自动补齐，不用写底层核心/库）
+# 注意：以 # 开头的行是注释，会被忽略，随便写说明。
+# ============================================================
+
+# ---------- 科学上网（菜单里 4 款，平时只启用 1 个，其余保持关闭） ----------
+# 下面 3 款确认在 VIKINGYFY 源里（Packages.sh 第 60-62 行）
+CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall2=y
+# 第 4 款 SSR-Plus：VIKINGYFY 默认【没有】它的源，必须先在 Scripts/Packages.sh 里加一行 helloworld 源（见下方说明），
+#   否则这一行会被 make defconfig 静默丢弃，固件里根本不会出现。加源后这行才生效。
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+# （备选）nikki 源已含（Packages.sh 第 59 行），想要可取消注释：
+# CONFIG_PACKAGE_luci-app-nikki=y
+#
+# ⚠️ 加源步骤（必须做，否则 ssr-plus 出不来）：
+#   在你 Fork 的 Scripts/Packages.sh 里，随便找个位置（建议放在 passwall2 那行后面）加这一行：
+#       UPDATE_PACKAGE "helloworld" "fw876/helloworld" "dev"
+#   注意分支是 dev（不是 master）。提交后再编译，luci-app-ssr-plus 及其依赖（shadowsocksr-libev 等）才会被拉进来。
+#   为避免与 viking 源的 sing-box 等重复定义，本构建只勾 luci-app-ssr-plus，不单独选 helloworld 里的 xray-core/sing-box。
+
+# ---------- DNS / 去广告（可选，按需要取用） ----------
+# mosdns 确认在源（Packages.sh 第 71 行）
+CONFIG_PACKAGE_luci-app-mosdns=y
+# smartdns 不在默认源，先不加（需要时自己挂源）
+
+# ---------- 网络工具 / 实用（可选，都是确认在源或官方 feed 的） ----------
+CONFIG_PACKAGE_luci-app-ttyd=y            # 网页版终端
+CONFIG_PACKAGE_luci-app-filetransfer=y   # 网页上传/下载文件
+CONFIG_PACKAGE_luci-app-upnp=y           # UPnP / NAT-PMP（BT/游戏联机常用）
+CONFIG_PACKAGE_luci-app-easytier=y       # 内网穿透/组虚拟局域网（源第 65 行）
+CONFIG_PACKAGE_luci-app-ddnsto=y         # DDNSTO 内网穿透/远程控制（即 ddns.to 远程控制，依赖 ddnsto 后端；源: kenzok8/openwrt-packages 提取）
+CONFIG_PACKAGE_luci-app-netspeedtest=y   # 带宽测速（源第 77 行）
+CONFIG_PACKAGE_luci-app-diskman=y        # 磁盘/分区管理（源第 70 行）
