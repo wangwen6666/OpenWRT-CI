@@ -30,7 +30,8 @@ CONFIG_PACKAGE_luci-app-mosdns=y
 
 # ---------- 网络工具 / 实用（可选，都是确认在源或官方 feed 的） ----------
 CONFIG_PACKAGE_luci-app-ttyd=y            # 网页版终端
-CONFIG_PACKAGE_luci-app-filetransfer=y   # 网页上传/下载文件
+CONFIG_PACKAGE_luci-app-quickfile=y
+CONFIG_PACKAGE_quickfile=y
 CONFIG_PACKAGE_luci-app-upnp=y           # UPnP / NAT-PMP（BT/游戏联机常用）
 CONFIG_PACKAGE_luci-app-easytier=y       # 内网穿透/组虚拟局域网（源第 65 行）
 CONFIG_PACKAGE_luci-app-ddnsto=y         # DDNSTO 内网穿透/远程控制（即 ddns.to 远程控制，依赖 ddnsto 后端；源: kenzok8/openwrt-packages 提取）
