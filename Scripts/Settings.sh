@@ -51,3 +51,11 @@ if [[ "${WRT_TARGET^^}" == *"QUALCOMMAX"* ]]; then
 		echo "qualcommax set up nowifi successfully!"
 	fi
 fi
+
+# 设置网页/SSH 登录密码为 root（OpenWrt 网页登录用户名固定就是 root，无需改）
+mkdir -p ./files/etc/uci-defaults
+cat > ./files/etc/uci-defaults/99-root-password <<'EOF'
+#!/bin/sh
+echo 'root:root' | chpasswd 2>/dev/null
+EOF
+chmod +x ./files/etc/uci-defaults/99-root-password
