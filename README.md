@@ -14,7 +14,7 @@
 | 后台地址 | 192.168.5.1 |
 | 主机名 | OpenWrt |
 | WiFi SSID | JDC_AX1800 |
-| 网页/SSH 账号 | root（密码见构建默认值） |
+| 网页/SSH 账号 | root |
 | 内置插件 | OpenClash / PassWall / PassWall2 / SSR-Plus（**只启用一个**）、mosdns、ddnsto、quickfile、ttyd、upnp、easytier、netspeedtest、diskman |
 
 ---
