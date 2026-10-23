@@ -86,7 +86,7 @@ chmod +x ./files/etc/uci-defaults/99-root-password
       WRT_THEME: argon
       WRT_NAME: OpenWrt
       WRT_SSID: JDC_AX1800
-      WRT_WORD: <保持上游默认，不改>
+      WRT_WORD: 12345678
       WRT_IP: 192.168.5.1
       WRT_PW: 无
 ```
