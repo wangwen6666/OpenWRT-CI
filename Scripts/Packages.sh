@@ -61,6 +61,10 @@ UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "passwall" "Openwrt-Passwall/openwrt-passwall" "main" "pkg"
 UPDATE_PACKAGE "passwall2" "Openwrt-Passwall/openwrt-passwall2" "main" "pkg"
 
+UPDATE_PACKAGE "helloworld" "fw876/helloworld" "dev"
+# ddns.to 远程控制（DDNSTO）：从 kenzok8 大仓库按目录名 ddnsto 提取 ddnsto + luci-app-ddnsto 两个包
+UPDATE_PACKAGE "ddnsto" "kenzok8/openwrt-packages" "master" "pkg"
+
 UPDATE_PACKAGE "diskmanager" "4IceG/luci-app-mini-diskmanager" "main"
 UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 UPDATE_PACKAGE "qmodem" "FUjr/QModem" "main"
